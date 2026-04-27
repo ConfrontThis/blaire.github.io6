@@ -1,0 +1,138 @@
+    body {
+      margin: 0;
+      font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+      background: #050505;
+      color: #aaa;
+      letter-spacing: 1px;
+    }
+
+    /* Background video */
+    .bg-video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+      z-index: -1;
+      opacity: 0.8;
+      filter: grayscale(100%) contrast(120%) brightness(60%);
+    }
+
+    /* Hero */
+    header {
+      height: 100vh;
+      height: 100dvh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: env(safe-area-inset-top) 0 env(safe-area-inset-bottom);
+    }
+
+    .hero-logo {
+      width: 75%;
+      max-width: 700px;
+      opacity: 0.85;
+      filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.08));
+      transition: opacity 0.6s ease, filter 0.6s ease;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    @media (hover: hover) {
+      .hero-logo:hover {
+        opacity: 1;
+        filter: drop-shadow(0 0 30px rgba(255, 255, 255, 0.2));
+      }
+    }
+
+    /* Sigil nav section */
+    #sigil-nav {
+      display: flex;
+      justify-content: center;
+      padding: 40px 0 60px;
+    }
+
+    .sigil-nav {
+      display: flex;
+      justify-content: center;
+      gap: 150px;
+    }
+
+    .sigil-nav a {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .sigil-nav a img {
+      height: 450px;
+      width: 200px;
+      opacity: 0.6;
+      transition: opacity 0.4s ease, transform 0.4s ease;
+      display: block;
+    }
+
+    @media (hover: hover) {
+      .sigil-nav a img:hover {
+        opacity: 1;
+        transform: scale(1.05);
+      }
+    }
+
+    @media (hover: none) {
+      .sigil-nav a:active img {
+        opacity: 1;
+        transform: scale(1.05);
+      }
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      padding-bottom: calc(40px + env(safe-area-inset-bottom));
+      font-size: 0.7rem;
+      color: #686868;
+    }
+
+    /* Fade-in animation */
+    .fade {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 1.2s ease, transform 1.2s ease;
+    }
+
+    .fade.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ── Mobile (iPhone) ── */
+    @media (max-width: 480px) {
+      .hero-logo {
+        width: 85%;
+      }
+
+      .sigil-nav {
+        gap: 30px;
+      }
+
+      .sigil-nav a img {
+        height: 280px;
+        width: 110px;
+      }
+
+      #sigil-nav {
+        padding: 20px 0 40px;
+      }
+    }
+
+    /* ── Tablet ── */
+    @media (min-width: 481px) and (max-width: 768px) {
+      .sigil-nav {
+        gap: 60px;
+      }
+
+      .sigil-nav a img {
+        height: 350px;
+        width: 150px;
+      }
+    }

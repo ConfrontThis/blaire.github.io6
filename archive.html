@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>BLAIRE — Archive</title>
+  <link rel="stylesheet" href="archive.css">
+</head>
+<body>
+
+  <video autoplay muted loop playsinline class="bg-video">
+    <source src="WEBSITE VIDEO.mp4" type="video/mp4">
+  </video>
+
+  <header>
+    <h1>ARCHIVE</h1>
+  </header>
+
+  <section class="gallery-row">
+    <img src="geralt-abstract-10243433.jpg" alt="Gallery image 1">
+    <img src="geralt-dance-10239719.jpg" alt="Gallery image 2">
+    <img src="geralt-silhouette-10239692.jpg" alt="Gallery image 3">
+  </section>
+
+  <section class="gallery-row">
+    <img src="geralt-dance-10239727.jpg" alt="Gallery image 4">
+    <img src="geralt-surrealism-10215899.jpg" alt="Gallery image 5">
+  </section>
+
+  <footer>
+    <p>© BLAIRE</p>
+  </footer>
+
+  <script>
+    function typeWriter(element, text, speed = 180) {
+      element.textContent = '|';
+      let i = 0;
+      const timer = setInterval(() => {
+        element.textContent = text.slice(0, i + 1) + '|';
+        i++;
+        if (i >= text.length) {
+          let visible = true;
+          setInterval(() => {
+            element.textContent = visible ? text + '|' : text;
+            visible = !visible;
+          }, 700);
+          clearInterval(timer);
+        }
+      }, speed);
+    }
+
+    window.onload = () => {
+      const heading = document.querySelector('header h1');
+      if (heading) {
+        const text = heading.textContent.trim();
+        typeWriter(heading, text);
+      }
+    };
+  </script>
+
+</body>
+</html>

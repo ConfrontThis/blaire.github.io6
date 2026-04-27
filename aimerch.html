@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BLAIRE — Merch</title>
+  <link rel="stylesheet" href="aimerch.css">
+</head>
+<body>
+
+  <video autoplay muted loop playsinline class="bg-video">
+    <source src="WEBSITE VIDEO.mp4" type="video/mp4">
+  </video>
+
+  <header>
+    <h1>MERCH</h1>
+  </header>
+
+  <section class="merch-section">
+
+    <div class="item">
+      <img src="hoodie.png" alt="Hoodie">
+      <h2>VOID HOODIE</h2>
+      <p>$30</p>
+      <a href="#" class="buy-btn">VIEW</a>
+    </div>
+
+    <div class="item">
+      <img src="hat.png" alt="Hat">
+      <h2>STAR CAP</h2>
+      <p>$15</p>
+      <a href="#" class="buy-btn">VIEW</a>
+    </div>
+
+    <div class="item">
+      <img src="hat.png" alt="Hat">
+      <h2>STAR CAP</h2>
+      <p>$15</p>
+      <a href="#" class="buy-btn">VIEW</a>
+    </div>
+    
+    <div class="item">
+      <img src="hat.png" alt="Hat">
+      <h2>STAR CAP</h2>
+      <p>$15</p>
+      <a href="#" class="buy-btn">VIEW</a>
+    </div>
+
+  </section>
+
+  <footer>
+    <p>© BLAIRE</p>
+  </footer>
+
+  <script>
+  function typeWriter(element, text, speed = 180) {
+    element.textContent = '|';
+    let i = 0;
+    const timer = setInterval(() => {
+      element.textContent = text.slice(0, i + 1) + '|';
+      i++;
+      if (i >= text.length) {
+        // blink the cursor after typing is done
+        let visible = true;
+        setInterval(() => {
+          element.textContent = visible ? text + '|' : text;
+          visible = !visible;
+        }, 700);
+        clearInterval(timer);
+      }
+    }, speed);
+  }
+
+  window.onload = () => {
+    const heading = document.querySelector('header h1');
+    if (heading) {
+      const text = heading.textContent.trim();
+      typeWriter(heading, text);
+    }
+  };
+</script>
+
+</body>
+</html>

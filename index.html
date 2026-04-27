@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>BLAIRE</title>
+  <link rel="stylesheet" href="index.css"> 
+   
+</head>
+
+<body>
+
+  <video autoplay muted loop playsinline class="bg-video">
+    <source src="WEBSITE VIDEO.mp4" type="video/mp4">
+  </video>
+
+  <header>
+    <img src="blaire_white_transparent.png" alt="Blaire logo" class="hero-logo">
+  </header>
+
+  <section id="sigil-nav" class="fade">
+    <nav class="sigil-nav">
+      <a href="aimerch.html"><img src="blaire_star_WHITEb.png" alt="Merch"></a>
+      <a href="archive.html"><img src="blaire_star_WHITEb.png" alt="Gallery"></a>
+      <a href="index.html"><img src="blaire_star_WHITEb.png" alt="About"></a>
+    </nav>
+  </section>
+
+  <footer>
+    <p>© BLAIRE</p>
+  </footer>
+
+  <script>
+    const faders = document.querySelectorAll('.fade');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.2 });
+
+    faders.forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>
